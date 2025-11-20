@@ -12,7 +12,6 @@ on:
         required: false
         type: string
         default: ''
-  push:
   release:
     types: [published]
 
@@ -67,9 +66,9 @@ jobs:
         with:
           images: openfoldconsortium/openfold3
           tags: |
-            type=raw,value=${{ inputs.version }}
-            type=raw,value=${{ inputs.additional_tags }},enable=${{ inputs.additional_tags != '' }}
-            type=semver,pattern={{version}}
+            type=raw,value=${{ inputs.version }},enable=${{ github.event_name == 'workflow_dispatch' }}
+            type=raw,value=${{ inputs.additional_tags }},enable=${{ inputs.additional_tags != '' && github.event_name == 'workflow_dispatch' }}
+            type=semver,pattern={{major}}.{{minor}}
 
       - name: Build and push Docker image
         id: push
