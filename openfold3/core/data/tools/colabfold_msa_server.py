@@ -720,7 +720,8 @@ class ColabFoldQueryRunner:
             )
             m_with_templates = set(template_alignments[0])
         else:
-            # pdb70.m8 downloaded by Colabfold returned empty - No template alignments available
+            # pdb70.m8 downloaded by Colabfold returned empty
+            # --> No template alignments available
             # Create empty DataFrame with expected column structure (at least column 0)
             # to match the structure when file is read with header=None.
             logger.warning(

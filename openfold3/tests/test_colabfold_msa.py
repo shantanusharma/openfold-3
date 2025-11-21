@@ -139,7 +139,7 @@ class TestColabFoldQueryRunner:
 
     @staticmethod
     def _make_empty_template_file(path: Path):
-        """Create an empty pdb70.m8 file to simulate ColabFold returning empty template."""
+        """Create an empty pdb70.m8 file to simulate ColabFold empty templates."""
         raw_main_dir = path / "raw" / "main"
         raw_main_dir.mkdir(parents=True, exist_ok=True)
         # Create an empty file (0 bytes)
