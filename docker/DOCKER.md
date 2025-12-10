@@ -10,7 +10,7 @@ These images are the biggest but come with all the build tooling, needed to comp
 
 ```
 docker build \
-    -f docker/development/Dockerfile \
+    -f docker/Dockerfile \
     --target devel \
     -t openfold-docker:devel .
 ```
