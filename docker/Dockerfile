@@ -41,10 +41,9 @@ RUN /opt/openfold3/scripts/install_third_party_dependencies.sh
 
 # Install the package
 WORKDIR /opt/openfold3
-# --editable here implies `--no-build-isolation`, 
-# which is needed because we want to utilize the conda packages as build deps
+# `--no-build-isolation` is needed because we want to utilize the conda packages as build deps
 # and not re-install their pip versions (eg torch)
-RUN python3 -m pip install --editable .
+RUN python3 -m pip install --no-build-isolation .
 
 # Set CUDA architecture for compilation (adjust based on your GPU)
 ENV TORCH_CUDA_ARCH_LIST="8.0;8.6;9.0"
