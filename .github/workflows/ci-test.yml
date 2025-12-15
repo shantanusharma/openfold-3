@@ -23,7 +23,6 @@ jobs:
       matrix:
         include:
           - cuda_base_image_tag: "12.1.1-cudnn8-devel-ubuntu22.04"
-          - cuda_base_image_tag: "12.2.2-cudnn8-devel-ubuntu22.04"
     concurrency:
       group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ matrix.cuda_base_image_tag }}
       cancel-in-progress: true
