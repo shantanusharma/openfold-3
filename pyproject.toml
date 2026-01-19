@@ -72,6 +72,8 @@ test = [
 [project.optional-dependencies]
 dev = [
   "pytest",
+  "pytest-xdist",
+  "pytest-cov",
   "ruff",
 
   # used for documentation
